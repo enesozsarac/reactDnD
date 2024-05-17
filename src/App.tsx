@@ -1,6 +1,6 @@
 import { Box, Button, Modal, TextField } from "@mui/material";
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { nanoid } from "nanoid";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { FaTrash } from "react-icons/fa";
@@ -51,16 +51,13 @@ function App() {
   const handleOpen = (id: string, content: string) => {
     setOpen(true);
     setEditInput(content);
-    setSelectedId(id)
+    setSelectedId(id);
   };
 
   const handleEdit = () => {
-    // console.log(selectedId);
-
-    const selectedItem = listItems.filter((item) => item.id == selectedId)
-    selectedItem[0].content = editInput
-    console.log()
-
+    const selectedItem = listItems.filter((item) => item.id == selectedId);
+    selectedItem[0].content = editInput;
+    console.log();
     setOpen(false);
   };
 
