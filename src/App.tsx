@@ -30,10 +30,6 @@ function App() {
     setListInput("");
   };
 
-  // useEffect(() => {
-  //   console.log(listItems);
-  // }, [listItems]);
-
   const handleDragEnd = (result: any) => {
     if (!result.destination) return;
     const items = [...listItems];
@@ -108,7 +104,6 @@ function App() {
                       <Draggable key={id} draggableId={id} index={index}>
                         {(provider) => (
                           <Box
-                            sx={{ width: "750px", fontSize: "1.3rem" }}
                             className="listBox"
                             ref={provider.innerRef}
                             {...provider.draggableProps}
