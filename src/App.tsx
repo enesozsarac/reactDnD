@@ -66,7 +66,6 @@ function App() {
   const handleEdit = () => {
     const selectedItem = listItems.filter((item) => item.id == selectedId);
     selectedItem[0].content = editInput;
-    console.log();
     setOpen(false);
   };
 
