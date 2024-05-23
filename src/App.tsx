@@ -20,7 +20,7 @@ function App() {
   const [selectedId, setSelectedId] = useState<string>("");
 
   const addListItem = () => {
-    if (listInput.trim().length > 0 ) {
+    if (listInput.trim().length > 0) {
       const listItemId = nanoid();
 
       const newList = {
@@ -36,9 +36,9 @@ function App() {
         title: "HATA!!!",
         text: "Lütfen bir şeyler yazın!!",
         background: "#121212",
-        color:"#fff",
-        iconColor:"#f02f2f",
-        confirmButtonColor:"#90caf9"
+        color: "#fff",
+        iconColor: "#d32f2f",
+        confirmButtonColor: "#90caf9",
       });
     }
   };
@@ -52,9 +52,7 @@ function App() {
   };
 
   const handleDelete = (id: string) => {
-    setListItems((items) => (
-       items.filter((item) => item.id !== id)
-    ));
+    setListItems((items) => items.filter((item) => item.id !== id));
   };
 
   const handleOpen = (id: string, content: string) => {
