@@ -52,9 +52,9 @@ function App() {
   };
 
   const handleDelete = (id: string) => {
-    setListItems((items) => {
-      return items.filter((item) => item.id !== id);
-    });
+    setListItems((items) => (
+       items.filter((item) => item.id !== id)
+    ));
   };
 
   const handleOpen = (id: string, content: string) => {
