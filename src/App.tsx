@@ -20,7 +20,7 @@ function App() {
   const [selectedId, setSelectedId] = useState<string>("");
 
   const addListItem = () => {
-    if (listInput.length > 0) {
+    if (listInput.trim().length > 0 ) {
       const listItemId = nanoid();
 
       const newList = {
