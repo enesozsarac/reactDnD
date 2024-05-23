@@ -5,6 +5,7 @@ import { nanoid } from "nanoid";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { FaTrash } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 interface ListItem {
   id: string;
@@ -19,15 +20,27 @@ function App() {
   const [selectedId, setSelectedId] = useState<string>("");
 
   const addListItem = () => {
-    const listItemId = nanoid();
+    if (listInput.length > 0) {
+      const listItemId = nanoid();
 
-    const newList = {
-      id: listItemId,
-      content: listInput,
-    };
+      const newList = {
+        id: listItemId,
+        content: listInput,
+      };
 
-    setListItems([...listItems, newList]);
-    setListInput("");
+      setListItems([...listItems, newList]);
+      setListInput("");
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "HATA!!!",
+        text: "Lütfen bir şeyler yazın!!",
+        background: "#121212",
+        color:"#fff",
+        iconColor:"#f02f2f",
+        confirmButtonColor:"#90caf9"
+      });
+    }
   };
 
   const handleDragEnd = (result: any) => {
